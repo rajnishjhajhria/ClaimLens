@@ -1,0 +1,470 @@
+[
+ {
+  "id": 101,
+  "lang": "en",
+  "claim": "NASA has announced that Earth will have 6 days of complete darkness next month, no sunlight at all",
+  "title": "Earth Won't Go Dark for Days",
+  "fact_checked_claim": "“NASA confirms Earth will experience 15 days of darkness in November 2017.”",
+  "url": "https://www.factcheck.org/2017/08/earth-wont-go-dark-days/",
+  "score": 0.919
+ },
+ {
+  "id": 101,
+  "lang": "en",
+  "claim": "NASA has announced that Earth will have 6 days of complete darkness next month, no sunlight at all",
+  "title": "Purported NASA warning about 'world being plunged into darkness ...",
+  "fact_checked_claim": "NASA warns world will be in complete darkness in for six days in December",
+  "url": "https://factcheck.afp.com/doc.afp.com.334V66A",
+  "score": 0.919
+ },
+ {
+  "id": 101,
+  "lang": "en",
+  "claim": "NASA has announced that Earth will have 6 days of complete darkness next month, no sunlight at all",
+  "title": "No, NASA didn't confirm Earth will go dark for six days – PolitiFact",
+  "fact_checked_claim": "“NASA confirms earth will go dark for 6 days in December 2020.”",
+  "url": "https://politifact.com/factchecks/2020/dec/16/blog-posting/no-nasa-didnt-confirm-earth-will-go-dark-six-days/",
+  "score": 0.911
+ },
+ {
+  "id": 101,
+  "lang": "en",
+  "claim": "NASA has announced that Earth will have 6 days of complete darkness next month, no sunlight at all",
+  "title": "NASA Confirms 15 Days of Darkness?",
+  "fact_checked_claim": "NASA has confirmed the Earth will experience 15 straight days of darkness.",
+  "url": "https://www.snopes.com/fact-check/15-days-darkness-november/",
+  "score": 0.911
+ },
+ {
+  "id": 101,
+  "lang": "en",
+  "claim": "NASA has announced that Earth will have 6 days of complete darkness next month, no sunlight at all",
+  "title": "It's fake! NASA never said Earth will go dark for 15 days",
+  "fact_checked_claim": "\"NASA confirms Earth will experience 15 days of darkness In November 2017.\"",
+  "url": "https://politifact.com/factchecks/2017/jun/14/blog-posting/its-fake-nasa-never-said-earth-will-go-dark-15-day/",
+  "score": 0.903
+ },
+ {
+  "id": 101,
+  "lang": "en",
+  "claim": "NASA has announced that Earth will have 6 days of complete darkness next month, no sunlight at all",
+  "title": "6 Days of Darkness in December 2020?",
+  "fact_checked_claim": "NASA has announced that a multi-day worldwide blackout will occur beginning on 16 December 2020.",
+  "url": "https://www.snopes.com/fact-check/nasa-blackout-warning/",
+  "score": 0.902
+ },
+ {
+  "id": 102,
+  "lang": "en",
+  "claim": "If anyone in your WhatsApp group posts fake news, the group admin will be arrested by the police",
+  "title": "Action Against WhatsApp Admins Over COVID-19 Jokes? Hoax Alert!",
+  "fact_checked_claim": "Group admin is requested to close group for 2days as police can take action against admin & group members vide section 68, 140 & 188 if anyone even by mistake post a joke on corona",
+  "url": "https://www.thequint.com/news/webqoof/action-against-whatsapp-admins-over-covid-19-jokes-hoax-alert",
+  "score": 0.898
+ },
+ {
+  "id": 102,
+  "lang": "en",
+  "claim": "If anyone in your WhatsApp group posts fake news, the group admin will be arrested by the police",
+  "title": "Hoax Message Claims WhatsApp Group Admins Detained For ...",
+  "fact_checked_claim": "52 Group Admins Were Detained At Dadar Cyber Crime Police Station For WhatsApp Posts On Coronavirus",
+  "url": "https://www.boomlive.in/fake-news/hoax-message-claims-whatsapp-group-admins-detained-for-coronavirus-fake-news-7463",
+  "score": 0.889
+ },
+ {
+  "id": 103,
+  "lang": "hi",
+  "claim": "2000 रुपये के नए नोट में नैनो GPS चिप लगी है",
+  "title": "'नोट में चिप' के फ़र्ज़ी दावे से ABP न्यूज़ की एडिटेड वीडियो क्लिप वायरल ...",
+  "fact_checked_claim": "नोटबंदी की बरसी पर रोमाना का ज्ञान नहीं सुना तो क्या खाक सुना, 2000 के नोट को तीन घंटे फ्रीजर में रखने पर नोट चीप उगलने लगेगा",
+  "url": "https://hindi.boomlive.in/fact-check/demonetization-demonetisation-electronic-chip-in-rupees-2000-note-ban-abp-news-viral-video-fact-check-fake-news-15518",
+  "score": 0.884
+ },
+ {
+  "id": 104,
+  "lang": "hi",
+  "claim": "बाज़ार में प्लास्टिक के चावल बिक रहे हैं, इनसे बचें",
+  "title": "No, a Singaporean supermarket chain did not agree to withdraw ...",
+  "fact_checked_claim": "Plastic rice pulled from shelves at FairPrice supermarkets in Singapore",
+  "url": "https://factcheck.afp.com/no-singaporean-supermarket-chain-did-not-agree-withdraw-plastic-rice-its-shelves",
+  "score": 0.869
+ },
+ {
+  "id": 104,
+  "lang": "hi",
+  "claim": "बाज़ार में प्लास्टिक के चावल बिक रहे हैं, इनसे बचें",
+  "title": "Fact Check: NO Evidence Of Rice Made With Rubber Or Plastic ...",
+  "fact_checked_claim": "most Imported rice is fake and is made with rubber or plastic",
+  "url": "https://leadstories.com/hoax-alert/2022/06/fact-check-no-evidence-of-rice-made-with-rubber-or-plastic-passed-off-as-real.html",
+  "score": 0.863
+ },
+ {
+  "id": 104,
+  "lang": "hi",
+  "claim": "बाज़ार में प्लास्टिक के चावल बिक रहे हैं, इनसे बचें",
+  "title": "Fact Check: Video of production of plastic beads is being viral as ...",
+  "fact_checked_claim": "Here is the proof of plastic rice, be aware, be careful",
+  "url": "https://www.vishvasnews.com/politics/fact-check-video-of-production-of-plastic-beads-is-being-viral-as-plastic-rice/",
+  "score": 0.862
+ },
+ {
+  "id": 104,
+  "lang": "hi",
+  "claim": "बाज़ार में प्लास्टिक के चावल बिक रहे हैं, इनसे बचें",
+  "title": "Fact Check: No, this video does not show the manufacture of plastic ...",
+  "fact_checked_claim": "A viral video shows how plastic is used to manufacture rice in Chinese factories.",
+  "url": "https://digiteye.in/fact-check-no-this-video-does-not-show-the-manufacture-of-plastic-rice/",
+  "score": 0.861
+ },
+ {
+  "id": 104,
+  "lang": "hi",
+  "claim": "बाज़ार में प्लास्टिक के चावल बिक रहे हैं, इनसे बचें",
+  "title": "Plastic Rice from China",
+  "fact_checked_claim": "Consumers should be aware of plastic rice from China that is difficult to discern from \"real rice.\"",
+  "url": "https://www.snopes.com/fact-check/plastic-rice-from-china/",
+  "score": 0.856
+ },
+ {
+  "id": 104,
+  "lang": "hi",
+  "claim": "बाज़ार में प्लास्टिक के चावल बिक रहे हैं, इनसे बचें",
+  "title": "Fact Check: Real Videos In Montage Do NOT Show Indian Factories ...",
+  "fact_checked_claim": "Videos show how fake rice Is made from plastics",
+  "url": "https://leadstories.com/hoax-alert/2024/12/fact-check-real-videos-in-montage-do-not-show-indian-factories-manufacturing-artificial-plastic-rice.html",
+  "score": 0.855
+ },
+ {
+  "id": 107,
+  "lang": "pa",
+  "claim": "ਗਾਂ ਦਾ ਮੂਤਰ ਪੀਣ ਨਾਲ ਕੋਰੋਨਾ ਠੀਕ ਹੋ ਜਾਂਦਾ ਹੈ",
+  "title": "रामदेव की पुरानी तस्वीर को कोरोना वायरस और गोमूत्र से जोड़कर किया जा ...",
+  "fact_checked_claim": "बाबा रामदेव ने कोरोना वायरस से बचने के लिए गौ मूत्र को ज़्यादा मात्रा में ले लिया है",
+  "url": "https://www.altnews.in/hindi/fact-check-ramdev-coronavirus-cow-urine/",
+  "score": 0.873
+ },
+ {
+  "id": 107,
+  "lang": "pa",
+  "claim": "ਗਾਂ ਦਾ ਮੂਤਰ ਪੀਣ ਨਾਲ ਕੋਰੋਨਾ ਠੀਕ ਹੋ ਜਾਂਦਾ ਹੈ",
+  "title": "No Evidence Cow Urine Cures COVID-19",
+  "fact_checked_claim": "Drink cow urine to stop coronavirus.",
+  "url": "https://www.misbar.com/en/factcheck/2021/05/10/no-evidence-cow-urine-cures-covid-19",
+  "score": 0.858
+ },
+ {
+  "id": 107,
+  "lang": "pa",
+  "claim": "ਗਾਂ ਦਾ ਮੂਤਰ ਪੀਣ ਨਾਲ ਕੋਰੋਨਾ ਠੀਕ ਹੋ ਜਾਂਦਾ ਹੈ",
+  "title": "Old image shared as Ramdev overdosed on cow urine to avoid ...",
+  "fact_checked_claim": "Ramdev drank cow urine in high amounts to avoid the coronavirus and as a result, his condition worsened.",
+  "url": "https://www.altnews.in/fact-check-ramdev-coronavirus-cow-urine/",
+  "score": 0.85
+ },
+ {
+  "id": 107,
+  "lang": "pa",
+  "claim": "ਗਾਂ ਦਾ ਮੂਤਰ ਪੀਣ ਨਾਲ ਕੋਰੋਨਾ ਠੀਕ ਹੋ ਜਾਂਦਾ ਹੈ",
+  "title": "These photos show India's annual cow dung festival in October ...",
+  "fact_checked_claim": "Photos show people in India bathing in cow dung to prevent COVID-19 infection",
+  "url": "https://factcheck.afp.com/these-photos-show-indias-annual-cow-dung-festival-october-2019-weeks-coronavirus-outbreak",
+  "score": 0.846
+ },
+ {
+  "id": 107,
+  "lang": "pa",
+  "claim": "ਗਾਂ ਦਾ ਮੂਤਰ ਪੀਣ ਨਾਲ ਕੋਰੋਨਾ ਠੀਕ ਹੋ ਜਾਂਦਾ ਹੈ",
+  "title": "Old video from Myanmar falsely shared as Chinese monks ...",
+  "fact_checked_claim": "Chinese monks chanting mantras and sprinkling cow urine to curb coronavirus",
+  "url": "https://www.altnews.in/old-video-from-myanmar-falsely-shared-as-chinese-monks-sprinkling-cow-urine-amid-covid-19-pandemic/",
+  "score": 0.843
+ },
+ {
+  "id": 107,
+  "lang": "pa",
+  "claim": "ਗਾਂ ਦਾ ਮੂਤਰ ਪੀਣ ਨਾਲ ਕੋਰੋਨਾ ਠੀਕ ਹੋ ਜਾਂਦਾ ਹੈ",
+  "title": "All Cow Dung & Urine 'Hacks' That Will Not Work Against COVID-19",
+  "fact_checked_claim": "Cow Dung and Cow Urine can cure and prevent COVID-19",
+  "url": "https://www.thequint.com/fit/fit-webqoof/fact-check-of-cow-dung-and-cow-urine-as-covid-cure",
+  "score": 0.841
+ },
+ {
+  "id": 108,
+  "lang": "pa",
+  "claim": "ਹਲਦੀ ਵਾਲਾ ਦੁੱਧ ਪੀਣ ਨਾਲ ਕੈਂਸਰ ਠੀਕ ਹੋ ਜਾਂਦਾ ਹੈ",
+  "title": "Fact Check: हल्दी, नींबू, तुलसी और नीम खाने से चौथी स्टेज का कैंसर ठीक ...",
+  "fact_checked_claim": "हल्दी, नींबू, तुलसी और नीम खाने से चौथी स्टेज का कैंसर ठीक होता है।",
+  "url": "https://www.vishvasnews.com/viral/fact-check-cancer-cure-claim-turmeric-lemon-basil-neem-debunked/",
+  "score": 0.886
+ },
+ {
+  "id": 108,
+  "lang": "pa",
+  "claim": "ਹਲਦੀ ਵਾਲਾ ਦੁੱਧ ਪੀਣ ਨਾਲ ਕੈਂਸਰ ਠੀਕ ਹੋ ਜਾਂਦਾ ਹੈ",
+  "title": "Fact Check: Is turmeric juice the strongest cure for cancer?",
+  "fact_checked_claim": "turmeric juice is the strongest cure for cancer",
+  "url": "https://www.thip.media/health-news-fact-check/fact-check-is-turmeric-juice-the-strongest-cure-for-cancer/94953/",
+  "score": 0.858
+ },
+ {
+  "id": 108,
+  "lang": "pa",
+  "claim": "ਹਲਦੀ ਵਾਲਾ ਦੁੱਧ ਪੀਣ ਨਾਲ ਕੈਂਸਰ ਠੀਕ ਹੋ ਜਾਂਦਾ ਹੈ",
+  "title": "Fact Check: Claim That Eating Turmeric, Lemon, Basil, And Neem ...",
+  "fact_checked_claim": "Eating turmeric, lemon, basil and neem cures fourth stage cancer.",
+  "url": "https://www.vishvasnews.com/english/health/fact-check-claim-that-eating-turmeric-lemon-basil-and-neem-cures-stage-4-cancer-is-false/",
+  "score": 0.857
+ },
+ {
+  "id": 108,
+  "lang": "pa",
+  "claim": "ਹਲਦੀ ਵਾਲਾ ਦੁੱਧ ਪੀਣ ਨਾਲ ਕੈਂਸਰ ਠੀਕ ਹੋ ਜਾਂਦਾ ਹੈ",
+  "title": "Fact Check: Can a daily spoon of turmeric prevent cancer?",
+  "fact_checked_claim": "a daily spoon of turmeric can prevent cancer",
+  "url": "https://www.thip.media/health-news-fact-check/health-cure-claims-fact-check/fact-check-can-a-daily-spoon-of-turmeric-prevent-cancer/58724/",
+  "score": 0.855
+ },
+ {
+  "id": 108,
+  "lang": "pa",
+  "claim": "ਹਲਦੀ ਵਾਲਾ ਦੁੱਧ ਪੀਣ ਨਾਲ ਕੈਂਸਰ ਠੀਕ ਹੋ ਜਾਂਦਾ ਹੈ",
+  "title": "Fact Check: Can lemon, turmeric and garlic cure stage 4 cancer?",
+  "fact_checked_claim": "A mix of lemon, raw turmeric, garlic, and vinegar can be a home remedy for cancer and cure stage 4 cancer at home",
+  "url": "https://www.thip.media/health-news-fact-check/fact-check-can-lemon-turmeric-and-garlic-cure-stage-4-cancer/120313/",
+  "score": 0.852
+ },
+ {
+  "id": 108,
+  "lang": "pa",
+  "claim": "ਹਲਦੀ ਵਾਲਾ ਦੁੱਧ ਪੀਣ ਨਾਲ ਕੈਂਸਰ ਠੀਕ ਹੋ ਜਾਂਦਾ ਹੈ",
+  "title": "Fact Check: Can Oregano leaves, turmeric, Black pepper drink get ...",
+  "fact_checked_claim": "Oregano leaves, turmeric and Black pepper drink can get rid of colon cancer and ovarian cysts.",
+  "url": "https://medicaldialogues.in/fact-check/fact-check-can-oregano-leaves-turmeric-black-pepper-drink-get-rid-of-colon-cancer-and-ovarian-cysts-150177",
+  "score": 0.844
+ },
+ {
+  "id": 109,
+  "lang": "pa",
+  "claim": "ਬਿਜਲੀ ਦਾ ਬਿੱਲ ਨਹੀਂ ਭਰਿਆ ਤਾਂ ਅੱਜ ਰਾਤ ਬਿਜਲੀ ਕੱਟ ਦਿੱਤੀ ਜਾਵੇਗੀ, ਇਸ ਨੰਬਰ 'ਤੇ ਸੰਪਰਕ ਕਰੋ",
+  "title": "Fact Check: बिजली बिल का भुगतान अपडेट नहीं होने पर कनेक्शन काटने का ...",
+  "fact_checked_claim": "बिजली विभाग भेज रहा बिल भुगतान अपडेट नहीं होने पर कनेक्शन काटने का मैसेज।",
+  "url": "https://www.vishvasnews.com/viral/fact-check-electricity-bill-fraud-message-received-on-whatsapp/",
+  "score": 0.882
+ },
+ {
+  "id": 113,
+  "lang": "hinglish",
+  "claim": "Bhai ye sabko bhejo, UNESCO ne Jana Gana Mana ko duniya ka sabse achha rashtragaan declare kiya hai",
+  "title": "Fact Check: UNESCO ने नहीं की देशों के राष्ट्रगान की रैंकिंग, विश्व के ...",
+  "fact_checked_claim": "यूनेस्को ने 'जन गण मन' को दुनिया का सबसे अच्छा राष्ट्रगान घोषित किया है।",
+  "url": "https://www.vishvasnews.com/viral/fact-check-unesco-india-national-anthem-ranking-post-in-fake/",
+  "score": 0.878
+ },
+ {
+  "id": 113,
+  "lang": "hinglish",
+  "claim": "Bhai ye sabko bhejo, UNESCO ne Jana Gana Mana ko duniya ka sabse achha rashtragaan declare kiya hai",
+  "title": "UNESCO did not declare India's national anthem the best in the ...",
+  "fact_checked_claim": "“Our national anthem “Jana Gana Mana… “Is declared as the “BEST ANTHEM OF THE WORLD “by UNESCO.",
+  "url": "https://english.factcrescendo.com/2024/03/14/unesco-did-not-declare-indias-national-anthem-the-best-in-the-world/",
+  "score": 0.873
+ },
+ {
+  "id": 113,
+  "lang": "hinglish",
+  "claim": "Bhai ye sabko bhejo, UNESCO ne Jana Gana Mana ko duniya ka sabse achha rashtragaan declare kiya hai",
+  "title": "FACT CHECK: Did UNESCO Declare India's 'Jana Gana Mana' the ...",
+  "fact_checked_claim": "UNESCO declared India's national anthem, 'Jana Gana Mana,' to be the world's best.",
+  "url": "https://www.snopes.com/fact-check/unesco-india-national-anthem/",
+  "score": 0.87
+ },
+ {
+  "id": 113,
+  "lang": "hinglish",
+  "claim": "Bhai ye sabko bhejo, UNESCO ne Jana Gana Mana ko duniya ka sabse achha rashtragaan declare kiya hai",
+  "title": "India’s 'Jana Gana Mana' was not declared as “the World's Best ...",
+  "fact_checked_claim": "India’s National Anthem ‘Jana Gana Mana’ is declared by the UNESCO as the best anthem in the world.",
+  "url": "https://factly.in/indias-jana-gana-mana-was-not-declared-as-the-worlds-best-anthem-by-unesco/",
+  "score": 0.866
+ },
+ {
+  "id": 113,
+  "lang": "hinglish",
+  "claim": "Bhai ye sabko bhejo, UNESCO ne Jana Gana Mana ko duniya ka sabse achha rashtragaan declare kiya hai",
+  "title": "Fact Check: UNESCO does not rank national anthem of any country ...",
+  "fact_checked_claim": "Congratulation to all of Indians. Our national anthem",
+  "url": "https://www.vishvasnews.com/english/viral/fact-check-unesco-does-not-rank-national-anthem-of-any-country-viral-claim-is-false/",
+  "score": 0.864
+ },
+ {
+  "id": 113,
+  "lang": "hinglish",
+  "claim": "Bhai ye sabko bhejo, UNESCO ne Jana Gana Mana ko duniya ka sabse achha rashtragaan declare kiya hai",
+  "title": "Fact Check: Now JD(U) leader falls for best national anthem hoax",
+  "fact_checked_claim": "UNESCO has declared Indian national anthem as the best in the world.",
+  "url": "https://www.indiatoday.in/fact-check/story/fact-check-now-jd-u-leader-falls-for-best-national-anthem-hoax-1582061-2019-08-18",
+  "score": 0.859
+ },
+ {
+  "id": 114,
+  "lang": "hinglish",
+  "claim": "Bhai Kurkure plastic se bana hota hai, jalane pe plastic ki tarah jalta hai, bachon ko mat khilana",
+  "title": "तथ्य जाँचः क्या कुरकुरे में माइक्रोप्लास्टिक होता है?",
+  "fact_checked_claim": "कुरकुरे में माइक्रोप्लास्टिक होता है",
+  "url": "https://www.thip.media/hi/hindi-health-fact-check/fact-check-do-kurkure-contain-microplastics/143544/",
+  "score": 0.857
+ },
+ {
+  "id": 114,
+  "lang": "hinglish",
+  "claim": "Bhai Kurkure plastic se bana hota hai, jalane pe plastic ki tarah jalta hai, bachon ko mat khilana",
+  "title": "Fact Check: Viral video showing a powder erupting like a volcano is ...",
+  "fact_checked_claim": "Viral video shows Kurkure powder when ignited burning and erupting like a volcano",
+  "url": "https://www.telugupost.com/english-factcheck/viral-video-showing-a-powder-erupting-like-a-volcano-is-not-kurkure-powder-1563371",
+  "score": 0.832
+ },
+ {
+  "id": 116,
+  "lang": "pa",
+  "claim": "ਸ਼ਹਿਦ ਅਤੇ ਦਾਲਚੀਨੀ ਮਿਲਾ ਕੇ ਖਾਣ ਨਾਲ ਹਰ ਬਿਮਾਰੀ ਠੀਕ ਹੋ ਜਾਂਦੀ ਹੈ",
+  "title": "Fact Check: Can Ginger, Cinnamon and Honey Cure Hypothyroidism?",
+  "fact_checked_claim": "Can Ginger, Cinnamon and Honey Cure Hypothyroidism?",
+  "url": "https://medicaldialogues.in/fact-check/fact-check-can-ginger-cinnamon-and-honey-cure-hypothyroidism-169597",
+  "score": 0.811
+ },
+ {
+  "id": 116,
+  "lang": "pa",
+  "claim": "ਸ਼ਹਿਦ ਅਤੇ ਦਾਲਚੀਨੀ ਮਿਲਾ ਕੇ ਖਾਣ ਨਾਲ ਹਰ ਬਿਮਾਰੀ ਠੀਕ ਹੋ ਜਾਂਦੀ ਹੈ",
+  "title": "Facts on Honey and Cinnamon",
+  "fact_checked_claim": "Honey and cinnamon possess significant medicinal virtues.",
+  "url": "https://www.snopes.com/fact-check/honey-and-cinnamon-cure/",
+  "score": 0.808
+ },
+ {
+  "id": 117,
+  "lang": "pa",
+  "claim": "ਪਿੰਡਾਂ ਵਿੱਚ ਬੱਚੇ ਚੁੱਕਣ ਵਾਲਾ ਗਿਰੋਹ ਘੁੰਮ ਰਿਹਾ ਹੈ, ਅਣਜਾਣ ਲੋਕਾਂ ਤੋਂ ਬੱਚਿਆਂ ਨੂੰ ਬਚਾਓ",
+  "title": "नहीं, ये तस्वीरें किडनी बेचने वाले बच्चा चोर गिरोह के सदस्यों को नहीं दर्शाती",
+  "fact_checked_claim": "बच्चों को अगवा कर उनकी किडनी बेचने वाले एक गिरोह को पकड़ लिया गया है",
+  "url": "https://www.altnews.in/hindi/no-these-images-dont-depict-child-kidnapping-gangs-lifting-children-to-sell-kidneys/",
+  "score": 0.86
+ },
+ {
+  "id": 117,
+  "lang": "pa",
+  "claim": "ਪਿੰਡਾਂ ਵਿੱਚ ਬੱਚੇ ਚੁੱਕਣ ਵਾਲਾ ਗਿਰੋਹ ਘੁੰਮ ਰਿਹਾ ਹੈ, ਅਣਜਾਣ ਲੋਕਾਂ ਤੋਂ ਬੱਚਿਆਂ ਨੂੰ ਬਚਾਓ",
+  "title": "सोशल मीडिया में बच्चा चोरी की झूठी अफवाहों के साथ कई असंबंधित तस्वीरें ...",
+  "fact_checked_claim": "बच्चा चोर गिरोह के सदस्यों को किया गया गिरफ्तार, डिक्की में बंद कर ले जा रहे थे बच्चों को",
+  "url": "https://www.altnews.in/hindi/photographs-of-children-sitting-in-dickey-shared-with-child-kidnapping-rumours/",
+  "score": 0.847
+ },
+ {
+  "id": 117,
+  "lang": "pa",
+  "claim": "ਪਿੰਡਾਂ ਵਿੱਚ ਬੱਚੇ ਚੁੱਕਣ ਵਾਲਾ ਗਿਰੋਹ ਘੁੰਮ ਰਿਹਾ ਹੈ, ਅਣਜਾਣ ਲੋਕਾਂ ਤੋਂ ਬੱਚਿਆਂ ਨੂੰ ਬਚਾਓ",
+  "title": "बच्चा चोरी की अफवाह का सिलसिला जारी, महाराष्ट्र में भी फैल रही ये अफवाहें",
+  "fact_checked_claim": "बच्चों को अगवा करने वाले गिरोह के रूप में महाराष्ट्र में अलर्ट जारी करते हुए कुछ तस्वीरें साझा",
+  "url": "https://www.altnews.in/hindi/dangerous-child-abduction-rumour-frenzy-continues-now-spreads-to-maharashtra/",
+  "score": 0.844
+ },
+ {
+  "id": 117,
+  "lang": "pa",
+  "claim": "ਪਿੰਡਾਂ ਵਿੱਚ ਬੱਚੇ ਚੁੱਕਣ ਵਾਲਾ ਗਿਰੋਹ ਘੁੰਮ ਰਿਹਾ ਹੈ, ਅਣਜਾਣ ਲੋਕਾਂ ਤੋਂ ਬੱਚਿਆਂ ਨੂੰ ਬਚਾਓ",
+  "title": "पिता द्वारा अपने बच्चों को अगवा करने का पुराना वीडियो, बच्चा चोरी की ...",
+  "fact_checked_claim": "मध्यप्रदेश के इंदौर में बच्चा चोर गिरोह सक्रीय है",
+  "url": "https://www.altnews.in/hindi/old-video-of-father-kidnapping-his-own-kids-shared-to-fuel-false-child-kidnapping-rumours/",
+  "score": 0.838
+ },
+ {
+  "id": 117,
+  "lang": "pa",
+  "claim": "ਪਿੰਡਾਂ ਵਿੱਚ ਬੱਚੇ ਚੁੱਕਣ ਵਾਲਾ ਗਿਰੋਹ ਘੁੰਮ ਰਿਹਾ ਹੈ, ਅਣਜਾਣ ਲੋਕਾਂ ਤੋਂ ਬੱਚਿਆਂ ਨੂੰ ਬਚਾਓ",
+  "title": "Mentally unstable man beaten by mob in Himachal over false child ...",
+  "fact_checked_claim": "Child-kidnapping gang caught in Nalagarh, Himachal",
+  "url": "https://www.altnews.in/mentally-unstable-man-beaten-by-mob-in-himachal-over-false-child-lifting-rumours/",
+  "score": 0.834
+ },
+ {
+  "id": 117,
+  "lang": "pa",
+  "claim": "ਪਿੰਡਾਂ ਵਿੱਚ ਬੱਚੇ ਚੁੱਕਣ ਵਾਲਾ ਗਿਰੋਹ ਘੁੰਮ ਰਿਹਾ ਹੈ, ਅਣਜਾਣ ਲੋਕਾਂ ਤੋਂ ਬੱਚਿਆਂ ਨੂੰ ਬਚਾਓ",
+  "title": "Child Kidnapping Rumours: How A Video From Jharkhand Is ...",
+  "fact_checked_claim": "Child Kidnapping gangs are taking childre for organ harvesting in Mumbai",
+  "url": "https://www.boomlive.in/child-kidnapping-rumours-how-a-video-from-jharkhand-is-creating-panic-in-mumbai",
+  "score": 0.83
+ },
+ {
+  "id": 118,
+  "lang": "pa",
+  "claim": "ਚਾਰਜਿੰਗ 'ਤੇ ਲੱਗੇ ਮੋਬਾਈਲ ਨਾਲ ਗੱਲ ਕਰਨ ਨਾਲ ਫੋਨ ਫਟ ਸਕਦਾ ਹੈ",
+  "title": "False claim: Receiving call from '777888999' will cause your phone ...",
+  "fact_checked_claim": "Mobile phone explodes if you receive a number from 777888999",
+  "url": "https://www.altnews.in/false-claim-receiving-call-from-777888999-will-cause-your-phone-to-explode/",
+  "score": 0.844
+ },
+ {
+  "id": 119,
+  "lang": "pa",
+  "claim": "ਸਰਕਾਰ ਸਾਰੇ ਵਿਦਿਆਰਥੀਆਂ ਨੂੰ ਮੁਫ਼ਤ ਲੈਪਟਾਪ ਦੇ ਰਹੀ ਹੈ, ਰਜਿਸਟਰ ਕਰਨ ਲਈ ਇਸ ਲਿੰਕ 'ਤੇ ਕਲਿੱਕ ਕਰੋ",
+  "title": "Fact Check: छात्रों को फ्री लैपटॉप स्कीम के रजिस्ट्रेशन के लिए बनी ...",
+  "fact_checked_claim": "केंद्र सरकार ने स्टूडेंट्स के लिए फ्री लैपटॉप स्कीम चलाई है।",
+  "url": "https://www.vishvasnews.com/viral/fact-check-prime-minister-free-laptop-scheme-2023-24-is-fake/",
+  "score": 0.892
+ },
+ {
+  "id": 119,
+  "lang": "pa",
+  "claim": "ਸਰਕਾਰ ਸਾਰੇ ਵਿਦਿਆਰਥੀਆਂ ਨੂੰ ਮੁਫ਼ਤ ਲੈਪਟਾਪ ਦੇ ਰਹੀ ਹੈ, ਰਜਿਸਟਰ ਕਰਨ ਲਈ ਇਸ ਲਿੰਕ 'ਤੇ ਕਲਿੱਕ ਕਰੋ",
+  "title": "Fact Check: स्टूडेंट्स के लिए फ्री लैपटॉप का वायरल मैसेज फेक",
+  "fact_checked_claim": "सभी देशों के आर्थिक रूप से कमजोर स्टूडेंट्स को दिया जाएगा फ्री लैपटॉप।",
+  "url": "https://www.vishvasnews.com/viral/fact-check-viral-message-of-free-laptop-for-students-is-fake/",
+  "score": 0.882
+ },
+ {
+  "id": 119,
+  "lang": "pa",
+  "claim": "ਸਰਕਾਰ ਸਾਰੇ ਵਿਦਿਆਰਥੀਆਂ ਨੂੰ ਮੁਫ਼ਤ ਲੈਪਟਾਪ ਦੇ ਰਹੀ ਹੈ, ਰਜਿਸਟਰ ਕਰਨ ਲਈ ਇਸ ਲਿੰਕ 'ਤੇ ਕਲਿੱਕ ਕਰੋ",
+  "title": "Fact Check: फ्री लैपटॉप योजना के नाम से फिर फिशिंग लिंक वायरल, केंद्र ...",
+  "fact_checked_claim": "सरकार फ्री लैपटॉप दे रही है।",
+  "url": "https://www.vishvasnews.com/scam/fact-check-free-laptop-scheme-phishing-link-viral-no-such-govt-initiative/",
+  "score": 0.878
+ },
+ {
+  "id": 119,
+  "lang": "pa",
+  "claim": "ਸਰਕਾਰ ਸਾਰੇ ਵਿਦਿਆਰਥੀਆਂ ਨੂੰ ਮੁਫ਼ਤ ਲੈਪਟਾਪ ਦੇ ਰਹੀ ਹੈ, ਰਜਿਸਟਰ ਕਰਨ ਲਈ ਇਸ ਲਿੰਕ 'ਤੇ ਕਲਿੱਕ ਕਰੋ",
+  "title": "Is the Govt giving out free laptops to students? Old claim resurfaces ...",
+  "fact_checked_claim": "A viral message claims that the government is giving out free laptops to students from financially disadvantaged backgrounds.",
+  "url": "https://digiteye.in/is-the-govt-giving-out-free-laptops-to-students-old-claim-resurfaces-fact-check/",
+  "score": 0.854
+ },
+ {
+  "id": 119,
+  "lang": "pa",
+  "claim": "ਸਰਕਾਰ ਸਾਰੇ ਵਿਦਿਆਰਥੀਆਂ ਨੂੰ ਮੁਫ਼ਤ ਲੈਪਟਾਪ ਦੇ ਰਹੀ ਹੈ, ਰਜਿਸਟਰ ਕਰਨ ਲਈ ਇਸ ਲਿੰਕ 'ਤੇ ਕਲਿੱਕ ਕਰੋ",
+  "title": "Fact Check: WhatsApp message claiming free laptops would be ...",
+  "fact_checked_claim": "Free laptops are being distributed to students in 2024, we can apply online",
+  "url": "https://www.telugupost.com/english-factcheck/whatsapp-message-claiming-free-laptops-would-be-given-to-students-is-a-hoax-1551611",
+  "score": 0.846
+ },
+ {
+  "id": 119,
+  "lang": "pa",
+  "claim": "ਸਰਕਾਰ ਸਾਰੇ ਵਿਦਿਆਰਥੀਆਂ ਨੂੰ ਮੁਫ਼ਤ ਲੈਪਟਾਪ ਦੇ ਰਹੀ ਹੈ, ਰਜਿਸਟਰ ਕਰਨ ਲਈ ਇਸ ਲਿੰਕ 'ਤੇ ਕਲਿੱਕ ਕਰੋ",
+  "title": "Fact Check : AICTE छात्रों के लिए नहीं चला रहा फ्री लैपटॉप योजना, वायरल ...",
+  "fact_checked_claim": "सरकार फ्री लैपटॉप योजना के तहत छात्रों को फ्री लैपटॉप दे रही है।।",
+  "url": "https://www.vishvasnews.com/education/fact-check-aicte-free-laptop-scheme-for-students-viral-with-fake-claim/",
+  "score": 0.843
+ },
+ {
+  "id": 120,
+  "lang": "pa",
+  "claim": "ਫ੍ਰੀਜ਼ਰ ਵਿੱਚ ਰੱਖੀਆਂ ਪਲਾਸਟਿਕ ਦੀਆਂ ਬੋਤਲਾਂ ਦਾ ਪਾਣੀ ਪੀਣ ਨਾਲ ਕੈਂਸਰ ਹੋ ਜਾਂਦਾ ਹੈ",
+  "title": "Can Water from Plastic Bottles Be Toxic?",
+  "fact_checked_claim": "Reusing, freezing, or warming plastic water bottles will cause them to break down into carcinogenic compounds or release dioxins.",
+  "url": "https://www.snopes.com/fact-check/can-water-from-plastic-bottles-be-toxic/",
+  "score": 0.852
+ }
+]

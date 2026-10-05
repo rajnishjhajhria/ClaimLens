@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Mukta:wght@400;600;800&family=Mukta+Mahee:wght@400;600;800&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #f6f7fb;
+  color: #1a1d3f;
+  /* Mukta covers Latin and Devanagari, Mukta Mahee covers Gurmukhi; Noto and system fonts are fallbacks */
+  font-family: "Mukta", "Mukta Mahee", "Noto Sans Devanagari", "Noto Sans Gurmukhi", system-ui, -apple-system,
+    "Segoe UI", sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.55;
+}
+
+:lang(pa) {
+  font-family: "Mukta Mahee", "Noto Sans Gurmukhi", "Mukta", system-ui, sans-serif;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

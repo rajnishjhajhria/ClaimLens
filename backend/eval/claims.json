@@ -1,0 +1,77 @@
+[
+  {
+    "id": 1, "lang": "en", "expect_covered": "yes",
+    "claim": "Drinking hot water with lemon every morning cures cancer",
+    "queries": [["lemon cancer", "en"], ["lemon water cancer cure", "en"], ["नींबू कैंसर", "hi"]]
+  },
+  {
+    "id": 2, "lang": "en", "expect_covered": "yes",
+    "claim": "5G towers spread coronavirus",
+    "queries": [["5G Corona", "en"], ["5G tower COVID", "en"], ["5G कोरोना", "hi"]]
+  },
+  {
+    "id": 3, "lang": "en", "expect_covered": "yes",
+    "claim": "WhatsApp will start charging users from next month, forward this message to keep it free",
+    "queries": [["WhatsApp charges", "en"], ["WhatsApp paid subscription", "en"], ["व्हाट्सएप चार्ज", "hi"]]
+  },
+  {
+    "id": 4, "lang": "en", "expect_covered": "no",
+    "claim": "Eating exactly 7 almonds every Tuesday doubles your IQ, scientists confirmed",
+    "queries": [["almonds IQ", "en"], ["almonds double IQ", "en"]]
+  },
+  {
+    "id": 5, "lang": "hi", "expect_covered": "yes",
+    "claim": "मोदी सरकार सभी को फ्री मोबाइल रिचार्ज दे रही है, इस लिंक पर क्लिक करके पाएं",
+    "queries": [["फ्री रिचार्ज", "hi"], ["फ्री रिचार्ज सरकार", "hi"], ["free recharge government", "en"]]
+  },
+  {
+    "id": 6, "lang": "hi", "expect_covered": "yes",
+    "claim": "1 जुलाई से सभी UPI पेमेंट पर 18 प्रतिशत GST लगेगा",
+    "queries": [["UPI GST", "hi"], ["UPI पेमेंट GST", "hi"], ["UPI GST charge", "en"]]
+  },
+  {
+    "id": 7, "lang": "hi", "expect_covered": "yes",
+    "claim": "गर्म पानी पीने से कोरोना वायरस मर जाता है",
+    "queries": [["गर्म पानी कोरोना", "hi"], ["hot water coronavirus", "en"], ["गर्म पानी वायरस", "hi"]]
+  },
+  {
+    "id": 8, "lang": "hi", "expect_covered": "no",
+    "claim": "मेरे गांव के कुएं का पानी रात में सोना बन जाता है",
+    "queries": [["कुएं पानी सोना", "hi"], ["well water gold", "en"]]
+  },
+  {
+    "id": 9, "lang": "hinglish", "expect_covered": "yes",
+    "claim": "Bhai ye forward kar do, kal se sabhi ATM se 500 ke note band ho jayenge, RBI ne order nikala hai",
+    "queries": [["500 notes", "en"], ["RBI 500 notes ban", "en"], ["500 नोट", "hi"]]
+  },
+  {
+    "id": 10, "lang": "hinglish", "expect_covered": "yes",
+    "claim": "Bhai Martinelli naam ka video mat kholna, tera phone hack ho jayega, sabko forward karo",
+    "queries": [["Martinelli video", "en"], ["Martinelli hack", "en"], ["मार्टिनेली वीडियो", "hi"]]
+  },
+  {
+    "id": 11, "lang": "hinglish", "expect_covered": "maybe",
+    "claim": "Kal se petrol 200 rupaye litre ho jayega, abhi apni tanki full karwa lo",
+    "queries": [["petrol 200", "en"], ["पेट्रोल 200 रुपये", "hi"], ["petrol price hike rumour", "en"]]
+  },
+  {
+    "id": 12, "lang": "pa", "expect_covered": "yes",
+    "claim": "ਕੋਰੋਨਾ ਵੈਕਸੀਨ ਲਗਵਾਉਣ ਨਾਲ ਸਰੀਰ ਵਿੱਚ ਚਿੱਪ ਲੱਗ ਜਾਂਦੀ ਹੈ",
+    "queries": [["ਕੋਰੋਨਾ ਵੈਕਸੀਨ ਚਿੱਪ", "pa"], ["vaccine microchip", "en"], ["वैक्सीन चिप", "hi"]]
+  },
+  {
+    "id": 13, "lang": "pa", "expect_covered": "yes",
+    "claim": "ਸਰਕਾਰ ਹਰ ਪਰਿਵਾਰ ਨੂੰ ਮੁਫ਼ਤ ਮੋਬਾਈਲ ਰੀਚਾਰਜ ਦੇ ਰਹੀ ਹੈ, ਇਸ ਲਿੰਕ 'ਤੇ ਕਲਿੱਕ ਕਰੋ",
+    "queries": [["ਮੁਫ਼ਤ ਰੀਚਾਰਜ", "pa"], ["ਮੁਫ਼ਤ ਰੀਚਾਰਜ ਸਰਕਾਰ", "pa"], ["फ्री रिचार्ज", "hi"]]
+  },
+  {
+    "id": 14, "lang": "pa", "expect_covered": "maybe",
+    "claim": "ਪੰਜਾਬ ਵਿੱਚ ਕੱਲ੍ਹ ਤੋਂ ਸਾਰੇ ਸਕੂਲ ਇੱਕ ਹਫ਼ਤੇ ਲਈ ਬੰਦ ਰਹਿਣਗੇ, ਸਰਕਾਰ ਨੇ ਹੁਕਮ ਜਾਰੀ ਕਰ ਦਿੱਤਾ ਹੈ",
+    "queries": [["ਪੰਜਾਬ ਸਕੂਲ ਬੰਦ", "pa"], ["Punjab schools closed", "en"], ["पंजाब स्कूल बंद", "hi"]]
+  },
+  {
+    "id": 15, "lang": "pa", "expect_covered": "no",
+    "claim": "ਸਾਡੇ ਪਿੰਡ ਦੇ ਗੁਰਦੁਆਰੇ ਦੇ ਸਰੋਵਰ ਦਾ ਪਾਣੀ ਹਰ ਰੋਜ਼ ਰੰਗ ਬਦਲਦਾ ਹੈ",
+    "queries": [["ਸਰੋਵਰ ਪਾਣੀ ਰੰਗ", "pa"], ["gurdwara sarovar water colour", "en"]]
+  }
+]

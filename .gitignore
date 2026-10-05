@@ -1,0 +1,45 @@
+# Environment files and local secrets
+.env
+.env.*
+!.env.example
+
+# Python virtual environments and generated files
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Frontend dependencies and build output
+node_modules/
+dist/
+dist-ssr/
+build/
+.vite/
+*.local
+
+# Application caches and logs
+llm_cache.json
+ai_cache.json
+*.log
+
+# Local databases and serialized artifacts
+*.db
+*.sqlite
+*.sqlite3
+
+# Editor and operating-system files
+.idea/
+.vscode/*
+!.vscode/extensions.json
+.DS_Store
+Thumbs.db
+*.suo
+*.swp
+*.swo

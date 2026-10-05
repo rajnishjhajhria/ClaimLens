@@ -1,0 +1,42 @@
+[
+  {
+    "id": 113, "lang": "hinglish", "expect_covered": "yes",
+    "claim": "Bhai ye sabko bhejo, UNESCO ne Jana Gana Mana ko duniya ka sabse achha rashtragaan declare kiya hai",
+    "queries": [["UNESCO national anthem", "en"], ["UNESCO जन गण मन", "hi"], ["UNESCO best anthem", "en"]]
+  },
+  {
+    "id": 114, "lang": "hinglish", "expect_covered": "yes",
+    "claim": "Bhai Kurkure plastic se bana hota hai, jalane pe plastic ki tarah jalta hai, bachon ko mat khilana",
+    "queries": [["Kurkure plastic", "en"], ["कुरकुरे प्लास्टिक", "hi"], ["Kurkure plastic burn", "en"]]
+  },
+  {
+    "id": 115, "lang": "hinglish", "expect_covered": "yes",
+    "claim": "Bhai tarbooz mein injection se laal rang aur meethas daali jaati hai, tarbooz mat khana",
+    "queries": [["watermelon injection", "en"], ["तरबूज इंजेक्शन", "hi"], ["watermelon red colour injection", "en"]]
+  },
+  {
+    "id": 116, "lang": "pa", "expect_covered": "maybe",
+    "claim": "ਸ਼ਹਿਦ ਅਤੇ ਦਾਲਚੀਨੀ ਮਿਲਾ ਕੇ ਖਾਣ ਨਾਲ ਹਰ ਬਿਮਾਰੀ ਠੀਕ ਹੋ ਜਾਂਦੀ ਹੈ",
+    "queries": [["ਸ਼ਹਿਦ ਦਾਲਚੀਨੀ", "pa"], ["honey cinnamon cure", "en"], ["शहद दालचीनी", "hi"]]
+  },
+  {
+    "id": 117, "lang": "pa", "expect_covered": "maybe",
+    "claim": "ਪਿੰਡਾਂ ਵਿੱਚ ਬੱਚੇ ਚੁੱਕਣ ਵਾਲਾ ਗਿਰੋਹ ਘੁੰਮ ਰਿਹਾ ਹੈ, ਅਣਜਾਣ ਲੋਕਾਂ ਤੋਂ ਬੱਚਿਆਂ ਨੂੰ ਬਚਾਓ",
+    "queries": [["ਬੱਚੇ ਚੁੱਕਣ ਵਾਲਾ ਗਿਰੋਹ", "pa"], ["child kidnapping gang rumour", "en"], ["बच्चा चोर गिरोह अफवाह", "hi"]]
+  },
+  {
+    "id": 118, "lang": "pa", "expect_covered": "maybe",
+    "claim": "ਚਾਰਜਿੰਗ 'ਤੇ ਲੱਗੇ ਮੋਬਾਈਲ ਨਾਲ ਗੱਲ ਕਰਨ ਨਾਲ ਫੋਨ ਫਟ ਸਕਦਾ ਹੈ",
+    "queries": [["ਚਾਰਜਿੰਗ ਮੋਬਾਈਲ ਧਮਾਕਾ", "pa"], ["mobile charging call blast", "en"], ["चार्जिंग मोबाइल बात ब्लास्ट", "hi"]]
+  },
+  {
+    "id": 119, "lang": "pa", "expect_covered": "yes",
+    "claim": "ਸਰਕਾਰ ਸਾਰੇ ਵਿਦਿਆਰਥੀਆਂ ਨੂੰ ਮੁਫ਼ਤ ਲੈਪਟਾਪ ਦੇ ਰਹੀ ਹੈ, ਰਜਿਸਟਰ ਕਰਨ ਲਈ ਇਸ ਲਿੰਕ 'ਤੇ ਕਲਿੱਕ ਕਰੋ",
+    "queries": [["ਮੁਫ਼ਤ ਲੈਪਟਾਪ", "pa"], ["free laptop scheme", "en"], ["फ्री लैपटॉप योजना", "hi"]]
+  },
+  {
+    "id": 120, "lang": "pa", "expect_covered": "maybe",
+    "claim": "ਫ੍ਰੀਜ਼ਰ ਵਿੱਚ ਰੱਖੀਆਂ ਪਲਾਸਟਿਕ ਦੀਆਂ ਬੋਤਲਾਂ ਦਾ ਪਾਣੀ ਪੀਣ ਨਾਲ ਕੈਂਸਰ ਹੋ ਜਾਂਦਾ ਹੈ",
+    "queries": [["ਫ੍ਰੀਜ਼ਰ ਪਲਾਸਟਿਕ ਬੋਤਲ ਕੈਂਸਰ", "pa"], ["frozen plastic bottle cancer", "en"], ["प्लास्टिक बोतल फ्रीजर कैंसर", "hi"]]
+  }
+]

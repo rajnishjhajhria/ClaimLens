@@ -1,0 +1,62 @@
+[
+  {
+    "id": 101, "lang": "en", "expect_covered": "yes",
+    "claim": "NASA has announced that Earth will have 6 days of complete darkness next month, no sunlight at all",
+    "queries": [["NASA darkness", "en"], ["NASA days darkness", "en"], ["नासा अंधेरा", "hi"]]
+  },
+  {
+    "id": 102, "lang": "en", "expect_covered": "yes",
+    "claim": "If anyone in your WhatsApp group posts fake news, the group admin will be arrested by the police",
+    "queries": [["WhatsApp admin arrest", "en"], ["WhatsApp group admin", "en"], ["व्हाट्सएप ग्रुप एडमिन", "hi"]]
+  },
+  {
+    "id": 103, "lang": "hi", "expect_covered": "yes",
+    "claim": "2000 रुपये के नए नोट में नैनो GPS चिप लगी है",
+    "queries": [["2000 नोट चिप", "hi"], ["2000 नोट GPS चिप", "hi"], ["2000 note GPS chip", "en"]]
+  },
+  {
+    "id": 104, "lang": "hi", "expect_covered": "yes",
+    "claim": "बाज़ार में प्लास्टिक के चावल बिक रहे हैं, इनसे बचें",
+    "queries": [["प्लास्टिक चावल", "hi"], ["प्लास्टिक के चावल बाजार", "hi"], ["plastic rice", "en"]]
+  },
+  {
+    "id": 105, "lang": "hi", "expect_covered": "yes",
+    "claim": "पीएम किसान योजना की किस्त पाने के लिए इस APK फाइल को डाउनलोड करें",
+    "queries": [["पीएम किसान APK", "hi"], ["पीएम किसान फाइल डाउनलोड", "hi"], ["PM Kisan APK", "en"]]
+  },
+  {
+    "id": 106, "lang": "hinglish", "expect_covered": "yes",
+    "claim": "Bhai namak ki bahut kami hone wali hai, jaldi se namak kharid lo, kal se 200 rupaye kilo ho jayega",
+    "queries": [["namak shortage", "en"], ["नमक की कमी", "hi"], ["salt shortage rumour", "en"]]
+  },
+  {
+    "id": 107, "lang": "pa", "expect_covered": "yes",
+    "claim": "ਗਾਂ ਦਾ ਮੂਤਰ ਪੀਣ ਨਾਲ ਕੋਰੋਨਾ ਠੀਕ ਹੋ ਜਾਂਦਾ ਹੈ",
+    "queries": [["ਗਾਂ ਮੂਤਰ ਕੋਰੋਨਾ", "pa"], ["cow urine coronavirus", "en"], ["गोमूत्र कोरोना", "hi"]]
+  },
+  {
+    "id": 108, "lang": "pa", "expect_covered": "yes",
+    "claim": "ਹਲਦੀ ਵਾਲਾ ਦੁੱਧ ਪੀਣ ਨਾਲ ਕੈਂਸਰ ਠੀਕ ਹੋ ਜਾਂਦਾ ਹੈ",
+    "queries": [["ਹਲਦੀ ਕੈਂਸਰ", "pa"], ["turmeric cancer cure", "en"], ["हल्दी कैंसर", "hi"]]
+  },
+  {
+    "id": 109, "lang": "pa", "expect_covered": "maybe",
+    "claim": "ਬਿਜਲੀ ਦਾ ਬਿੱਲ ਨਹੀਂ ਭਰਿਆ ਤਾਂ ਅੱਜ ਰਾਤ ਬਿਜਲੀ ਕੱਟ ਦਿੱਤੀ ਜਾਵੇਗੀ, ਇਸ ਨੰਬਰ 'ਤੇ ਸੰਪਰਕ ਕਰੋ",
+    "queries": [["ਬਿਜਲੀ ਬਿੱਲ ਠੱਗੀ", "pa"], ["electricity bill scam message", "en"], ["बिजली बिल कटेगा मैसेज", "hi"]]
+  },
+  {
+    "id": 110, "lang": "pa", "expect_covered": "maybe",
+    "claim": "ਆਧਾਰ ਕਾਰਡ ਨਾਲ ਮੋਬਾਈਲ ਨੰਬਰ ਲਿੰਕ ਨਾ ਕੀਤਾ ਤਾਂ ਸਿਮ ਬੰਦ ਹੋ ਜਾਵੇਗਾ",
+    "queries": [["ਆਧਾਰ ਸਿਮ ਬੰਦ", "pa"], ["Aadhaar SIM disconnect", "en"], ["आधार सिम बंद", "hi"]]
+  },
+  {
+    "id": 111, "lang": "pa", "expect_covered": "maybe",
+    "claim": "ਪੰਜਾਬ ਵਿੱਚ ਹਰ ਔਰਤ ਨੂੰ ਹਰ ਮਹੀਨੇ 1000 ਰੁਪਏ ਮਿਲਣਗੇ, ਫਾਰਮ ਭਰਨ ਲਈ ਇਸ ਲਿੰਕ 'ਤੇ ਕਲਿੱਕ ਕਰੋ",
+    "queries": [["ਔਰਤਾਂ 1000 ਰੁਪਏ", "pa"], ["Punjab women 1000 rupees", "en"], ["पंजाब महिलाओं 1000 रुपये", "hi"]]
+  },
+  {
+    "id": 112, "lang": "pa", "expect_covered": "no",
+    "claim": "ਸਾਡੇ ਪਿੰਡ ਦੇ ਸਰਪੰਚ ਨੇ ਐਲਾਨ ਕੀਤਾ ਹੈ ਕਿ ਕੱਲ੍ਹ ਹਰ ਘਰ ਨੂੰ ਮੁਫ਼ਤ ਕਣਕ ਮਿਲੇਗੀ",
+    "queries": [["ਮੁਫ਼ਤ ਕਣਕ ਸਰਪੰਚ", "pa"], ["free wheat village", "en"]]
+  }
+]
