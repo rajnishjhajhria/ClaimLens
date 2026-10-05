@@ -253,6 +253,6 @@ Fact-checks shown by the app belong to their publishers (Alt News, BOOM, The Qui
 ---
 
 <div align="center">
-Built by Ravi · an NLP course project<br>
+Built by Rajnish · an NLP course project<br>
 Released under the MIT License
 </div>
