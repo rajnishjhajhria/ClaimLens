@@ -32,6 +32,20 @@ This project does **not** decide what is true. It finds published fact-checks, c
 - **Says the answer plainly.** A verdict badge (False, Misleading, True, or mixed ratings) built from the fact-checkers' own ratings, with the sources underneath.
 - **Says "nothing found" honestly.** If no fact-check exists, it says so and does not guess.
 - **Optional AI second opinion.** When nothing is found, a separate button asks Gemini with Google Search to read current sources. It is **clearly labelled "not a fact-check"**, runs only on request, and was not part of the evaluation.
+- **Flags lender offers instead of rating them.** A message like "Your loan amount has increased … account xxx8898" is an offer, not a rumour, so it is never given a true or false verdict. ClaimLens shows a safety notice and runs an automatic web lookup of whether the named company is registered (for example with the RBI). That lookup is labelled as checking **the company only, not whether the message is genuine**, because scammers copy real company names.
+
+## Scope
+
+ClaimLens does one thing: it finds **published fact-checks** for a claim. It is not a spam, scam or phishing detector.
+
+| Input | What ClaimLens does |
+|---|---|
+| A viral claim or rumour | Searches published fact-checks and shows the ones about the same claim |
+| A claim with no published fact-check | Says so. Offers the optional AI check, labelled "not a fact-check" |
+| A personal offer or account alert (masked account number, "your loan amount", amounts) | Shows a safety notice and a company-registration lookup. **Never** rates the message true or false |
+| A message with no checkable claim | Says so |
+
+The related fact-checks shown under a result can be about a different claim on the same topic. They are shown in a neutral style, and the page says none of them rates your claim.
 
 ## How it works
 
@@ -48,6 +62,7 @@ flowchart LR
     G -->|related| I[Related fact-checks]
     H --> J[Verdict from the<br/>fact-checkers' ratings]
     H -.nothing found.-> K[Optional: Ask AI<br/>not a fact-check]
+    A -.personal offer<br/>or account alert.-> L[Safety notice +<br/>company lookup<br/>never rated]
 ```
 
 1. **Extract.** One Gemini call returns the language, the single checkable claim, and very short search queries. Long queries return nothing from the Fact Check API, so queries are two to four words.
@@ -145,6 +160,7 @@ cd backend
 python pipeline.py                                   # five sample forwards
 python try_ai_check.py "India won the T20 World Cup in 2024"
 python test_screenshots.py screenshots               # folder of images named hi_*.png, pa_*.png, none_*.png ...
+python test_notice.py                                # offer/alert rule: must catch alerts, flag none of the known rumours
 ```
 
 ## Configuration
@@ -171,29 +187,32 @@ python test_screenshots.py screenshots               # folder of images named hi
 | `GET` | `/health` | none | `{ "ok": true }` |
 | `POST` | `/check` | `{ "text": "…" }` (5–3000 chars) | status, extracted claim, matches, related |
 | `POST` | `/check-image` | multipart `file` (PNG, JPG or WebP, up to 5 MB) | same, plus the text read from the image |
-| `POST` | `/ai-check` | `{ "claim": "…" }` (5–600 chars) | verdict, summary with citations, sources. Rate-limited, cached 24 h |
+| `POST` | `/ai-check` | `{ "claim": "…", "message": "…", "kind": "claim" \| "company" }` (claim 5–600 chars, message up to 1500, `kind` defaults to `claim`) | verdict, summary with citations, sources. Rate-limited (5 per minute), cached 24 h |
 
-`status` is one of `match`, `no_match`, `no_claim` or `unjudged` (search worked but the judge was unavailable).
+`status` is one of `match`, `no_match`, `no_claim`, `notice` (a personal offer or account alert, with a `notice` object of safety points) or `unjudged` (search worked but the judge was unavailable).
+
+`/ai-check` verdicts: for `kind: "claim"`, `supported`, `contradicted`, `mixed`, `unclear` or `not_a_claim`. For `kind: "company"`, `registered`, `not_found` or `unclear`. An answer with no web sources behind it is always returned as `unclear`.
 
 ## Project structure
 
 ```
 backend/
 ├── main.py              FastAPI app: /check, /check-image, /ai-check
-├── pipeline.py          extract → search → judge → rank
+├── pipeline.py          extract → search → judge → rank, plus the offer/alert rule
 ├── claim_extractor.py   Gemini client, claim extraction (text and image), cache
 ├── factcheck_api.py     Google Fact Check Tools API client
 ├── fallback_search.py   Tavily search limited to fact-check sites
 ├── reranker.py          local embedding judge
 ├── rank.py              orders results by similarity to the claim
-├── ai_check.py          optional Gemini + Google Search check (not a fact-check)
+├── ai_check.py          Gemini + Google Search: the optional claim check and the company lookup
+├── test_notice.py       tests the offer/alert rule against 90+ known claims
 ├── eval/                labelled data and evaluation scripts
 ├── test_screenshots.py  runs a folder of screenshots through the pipeline
 └── try_ai_check.py      one-off test of the AI check
 frontend/src/
 ├── App.jsx              page, input tabs, how-it-works
-├── Results.jsx          verdict, filters, result rows
-├── AiCheck.jsx          the "Ask AI" panel
+├── Results.jsx          verdict, offer notice, filters, result rows
+├── AiCheck.jsx          the "Ask AI" panel and the company lookup panel
 ├── Graphics.jsx         icons and verdict gauge
 └── factcheckUtils.js    verdict logic, de-duplication, formatting
 ```
@@ -224,6 +243,7 @@ python evaluate_test.py          # strict and family metrics, bootstrap interval
 
 - Text you paste and screenshots you upload are sent to **Google's Gemini API**. The UI says so and suggests cropping out names and phone numbers.
 - The "Ask AI" check also sends the claim text to **Google Search**, and says so before you click.
+- For an offer or account alert, the company lookup runs **automatically** and sends the message text to Gemini and Google Search. The panel says so. Do not paste messages that contain account numbers, OTPs or other secrets you do not want sent.
 - Nothing is stored except the local response caches (`llm_cache.json`, `ai_cache.json`). Keep `.env` and both cache files out of git.
 - The tool only points to published fact-checks. It never labels a claim true or false on its own authority, and it never presents the AI second opinion as a fact-check.
 
@@ -235,6 +255,8 @@ python evaluate_test.py          # strict and family metrics, bootstrap interval
 - **The AI check can be wrong.** It is outside the evaluation and is labelled that way.
 - **Quota.** The free Gemini tier is small. Heavy use needs a paid key.
 - **Search variation.** The Fact Check API returns slightly different results from run to run.
+- **Spam and offer detection is deliberately narrow.** The offer rule needs three things at once: a masked account number such as `xxx8898`, "your"-style wording, and an amount or change word. It is built to avoid false alarms on rumours (0 false positives on the known test claims), so it misses offers that lack a masked number. Those go through the normal claim path.
+- **The company lookup does not prove a message is real.** It can show a company is registered. It cannot show that this particular message came from it.
 
 ## Roadmap
 

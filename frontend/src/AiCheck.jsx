@@ -9,6 +9,42 @@ const VERDICT_LABEL = {
   contradicted: "Sources contradict this claim",
   mixed: "Sources partly support this claim",
   unclear: "Sources don't settle this",
+  not_a_claim: "This looks like an offer, not a claim",
+};
+
+const COMPANY_LABEL = {
+  registered: "Sources show the company is registered",
+  not_found: "No registration found in sources",
+  unclear: "Sources don't settle this",
+};
+
+const COPY = {
+  claim: {
+    title: "Want a second opinion?",
+    intro: (
+      <>
+        No published fact-check covers this claim. An AI can search the web and tell you what current sources say. This
+        is <strong>not a fact-check</strong>, and the AI can be wrong.
+      </>
+    ),
+    button: "Ask AI to check this",
+    privacy: "The claim text is sent to Google Gemini and Google Search.",
+    loading: "Searching the web and reading sources. This can take up to half a minute.",
+    tag: "AI answer, not a fact-check",
+  },
+  company: {
+    title: "Check the company",
+    intro: (
+      <>
+        The message names a lender. An AI can search the web to see whether that company is registered with the RBI.
+        This checks <strong>the company only, not whether this message is genuine</strong>, and the AI can be wrong.
+      </>
+    ),
+    button: "Check the company",
+    privacy: "The message text is sent to Google Gemini and Google Search.",
+    loading: "Searching the web for this company and reading sources. This can take up to half a minute.",
+    tag: "AI company check, not a fact-check",
+  },
 };
 
 // Google's search suggestions are HTML from Google; show them in a sandbox so they cannot touch this page
@@ -40,13 +76,19 @@ function Summary({ text, claimLang }) {
   );
 }
 
-export default function AiCheck({ claim }) {
-  const [state, setState] = useState("idle"); // idle | loading | done | error
+export default function AiCheck({ claim, message = "", kind = "claim", auto = false }) {
+  const copy = COPY[kind] || COPY.claim;
+  const labels = kind === "company" ? COMPANY_LABEL : VERDICT_LABEL;
+  const [state, setState] = useState(auto ? "loading" : "idle"); // idle | loading | done | error
   const [data, setData] = useState(null);
   const [error, setError] = useState("");
   const ctrl = useRef(null);
 
-  useEffect(() => () => ctrl.current?.abort(), []);
+  useEffect(() => {
+    if (auto) run(); // the company check starts by itself; the cache makes repeats free
+    return () => ctrl.current?.abort();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   async function run() {
     ctrl.current?.abort();
@@ -58,7 +100,7 @@ export default function AiCheck({ claim }) {
       const res = await fetch(`${API}/ai-check`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ claim }),
+        body: JSON.stringify({ claim, message, kind }),
         signal: c.signal,
       });
       const body = await res.json().catch(() => ({}));
@@ -87,11 +129,8 @@ export default function AiCheck({ claim }) {
             <IconSearch width={22} height={22} />
           </span>
           <div>
-            <h3 id="ai-title">Want a second opinion?</h3>
-            <p>
-              No published fact-check covers this claim. An AI can search the web and tell you what current sources say.
-              This is <strong>not a fact-check</strong>, and the AI can be wrong.
-            </p>
+            <h3 id="ai-title">{copy.title}</h3>
+            <p>{copy.intro}</p>
           </div>
         </div>
         {state === "error" && (
@@ -100,9 +139,9 @@ export default function AiCheck({ claim }) {
           </p>
         )}
         <button type="button" className="ai-btn" onClick={run}>
-          Ask AI to check this
+          {copy.button}
         </button>
-        <p className="ai-privacy">The claim text is sent to Google Gemini and Google Search.</p>
+        <p className="ai-privacy">{copy.privacy}</p>
       </section>
     );
   }
@@ -110,7 +149,7 @@ export default function AiCheck({ claim }) {
   if (state === "loading") {
     return (
       <section className="ai ai-loading" aria-live="polite" aria-busy="true">
-        <p>Searching the web and reading sources. This can take up to half a minute.</p>
+        <p>{copy.loading}</p>
         <button type="button" className="ai-link" onClick={cancel}>
           Cancel
         </button>
@@ -118,11 +157,11 @@ export default function AiCheck({ claim }) {
     );
   }
 
-  const verdict = data.verdict in VERDICT_LABEL ? data.verdict : "unclear";
+  const verdict = data.verdict in labels ? data.verdict : "unclear";
   return (
     <section className={`ai ai-answer ai-v-${verdict}`} aria-labelledby="ai-title">
-      <div className="ai-tag">AI answer, not a fact-check</div>
-      <h3 id="ai-title">{VERDICT_LABEL[verdict]}</h3>
+      <div className="ai-tag">{copy.tag}</div>
+      <h3 id="ai-title">{labels[verdict]}</h3>
       <Summary text={data.summary} claimLang={claimLang} />
 
       {data.sources?.length > 0 && (

@@ -1,4 +1,5 @@
 import threading
+from typing import Literal
 import time
 from collections import defaultdict, deque
 
@@ -25,6 +26,8 @@ class CheckRequest(BaseModel):
 
 class AiCheckRequest(BaseModel):
     claim: str = Field(min_length=5, max_length=600)
+    message: str = Field(default="", max_length=1500)  # the original message, as context
+    kind: Literal["claim", "company"] = "claim"  # "company" checks who the sender is, not the claim
 
 
 @app.get("/health")
@@ -92,7 +95,7 @@ AI_ERROR_STATUS = {"quota": 429, "busy": 503, "failed": 502}
 def ai_check_endpoint(req: AiCheckRequest, request: Request):
     """Runs only when the person clicks the button. Cached answers do not count against the limit."""
     claim = req.claim.strip()
-    hit = ai_cached(claim)
+    hit = ai_cached(claim, req.message, req.kind)
     if hit:
         return hit
     who = request.client.host if request.client else "unknown"
@@ -104,6 +107,6 @@ def ai_check_endpoint(req: AiCheckRequest, request: Request):
             headers={"Retry-After": str(wait)},
         )
     try:
-        return ai_check(claim)
+        return ai_check(claim, req.message, req.kind)
     except AiCheckError as e:
         raise HTTPException(status_code=AI_ERROR_STATUS.get(e.kind, 502), detail=e.message)

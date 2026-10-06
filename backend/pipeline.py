@@ -4,6 +4,7 @@ import os
 import re
 from reranker import judge_embedding
 from rank import add_rank_scores, sort_key
+from reranker import RELATED_T
 
 JUDGE_MODE = os.getenv("JUDGE_MODE", "embedding")  # "embedding" or "llm"
 
@@ -40,6 +41,15 @@ def run_queries(queries_by_lang, seen):
                     seen[r["url"]] = r
 
 
+LISTING_URL_RE = re.compile(r"/(topic|topics|tag|tags|category|categories|author|authors|search)/", re.I)
+LISTING_TITLE_RE = re.compile(r"(top stories|articles, photos|news, photos|photos, videos)", re.I)
+
+
+def is_listing_page(c):
+    """Topic, tag and search pages are not fact-checks, whatever words they contain."""
+    return bool(LISTING_URL_RE.search(c.get("url") or "") or LISTING_TITLE_RE.search(c.get("title") or ""))
+
+
 def gather_candidates(queries, claim):
     seen = {}
     run_queries(queries, seen)
@@ -58,7 +68,7 @@ def gather_candidates(queries, claim):
                 seen.setdefault(r["url"], r)
         except Exception as e:
             print("  tavily failed:", e)
-    return list(seen.values())[:MAX_CANDIDATES]
+    return [c for c in seen.values() if not is_listing_page(c)][:MAX_CANDIDATES]
 
 
 def judge(claim, candidates):
@@ -100,9 +110,43 @@ def fix_language(ext, source_text=""):
     return ext
 
 
+# ---------- personal notifications (loan / bank / credit alerts) ----------
+# "Your loan amount on account xxx8898 has increased" is a message to one person, not a rumour that
+# fact-checkers review. The rule is deliberately narrow: all three parts must be present.
+MASKED_ID_RE = re.compile(r"(?:\b[xX*•]{2,}\s?\d{3,}\b|\b(?:a/c|acct|account|loan|card)\b[^.\n]{0,25}\b[xX*•]{2,}\s?\d{2,})")
+PERSONAL_RE = re.compile(r"\b(your|you|dear customer|aapka|aapke|आपका|आपके|आपकी|ਤੁਹਾਡਾ|ਤੁਹਾਡੇ)\b|आपका|आपके|आपकी|ਤੁਹਾਡ", re.I)
+CHANGE_RE = re.compile(
+    r"(increas|enhanc|approv|pre-?approved|eligible|credited|debited|withdrawn|limit|offer|disburs|overdue|expire|"
+    r"₹|rs\.?\s?\d|inr|बढ़|बढ|मंजूर|ਵਧ|ਮਨਜ਼ੂਰ)", re.I)
+
+
+def looks_like_notification(text):
+    """True for a personalised account alert: masked account/loan number AND 'your' wording AND an amount or change."""
+    t = text or ""
+    return bool(MASKED_ID_RE.search(t) and PERSONAL_RE.search(t) and CHANGE_RE.search(t))
+
+
+NOTICE = {
+    "kind": "personal_notification",
+    "points": [
+        "Fact-checks and web sources cannot tell you whether it is genuine.",
+        "Check only inside the company's official app or website. Do not click links in the message.",
+        "Never share OTPs, PINs, card details or passwords. Real lenders do not ask for them by message.",
+        "If in doubt, call the number printed on your card or on the company's official website.",
+    ],
+}
+
+
 def check_forward(text=None, image=None, mime=None):
+    if text and looks_like_notification(text):
+        ext = {"claim": "", "language": "en", "queries": [], "source_text": " ".join(text.split())[:1500]}
+        return {"status": "notice", "extraction": ext, "notice": NOTICE}
     ext = extract_claim_from_image(image, mime) if image else extract_claim(text)
+    if image and looks_like_notification(ext.get("extracted_text") or ""):
+        ext["source_text"] = " ".join((ext.get("extracted_text") or "").split())[:1500]
+        return {"status": "notice", "extraction": ext, "notice": NOTICE}
     fix_language(ext, text or "")
+    ext["source_text"] = " ".join((text or ext.get("extracted_text") or "").split())[:1500]
     if not ext.get("claim"):
         return {"status": "no_claim", "extraction": ext}
 
@@ -126,12 +170,19 @@ def check_forward(text=None, image=None, mime=None):
     def is_match(i, c):
         return verdicts.get(i) == "same" and (TAVILY_CAN_MATCH or not is_web(c))
 
+    # score everything first so weak web-search hits can be dropped
+    add_rank_scores(ext["claim"], candidates)
+
+    def keep_related(i, c):
+        if verdicts.get(i) not in ("related", "same"):
+            return False
+        # web-search items have no rating or claim text; show one only if the judge said "same" AND it is close
+        if is_web(c):
+            return verdicts.get(i) == "same" and c.get("rank_score", 0) >= RELATED_T
+        return True
+
     matches = [c for i, c in enumerate(candidates) if is_match(i, c)]
-    # a web-search result the judge called "same" is kept, but only as related
-    related = [c for i, c in enumerate(candidates)
-               if not is_match(i, c) and verdicts.get(i) in ("related", "same")]
-    # closest to the user's claim first (the same ordering whichever judge was used)
-    add_rank_scores(ext["claim"], matches + related)
+    related = [c for i, c in enumerate(candidates) if not is_match(i, c) and keep_related(i, c)]
     matches.sort(key=sort_key, reverse=True)
     related.sort(key=sort_key, reverse=True)
 

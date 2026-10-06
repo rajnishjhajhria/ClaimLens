@@ -15,7 +15,7 @@ import {
   verdictOf,
 } from "./factcheckUtils.js";
 import AiCheck from "./AiCheck.jsx";
-import { IconChevron, IconExternal, IconHelp, IconSearch, VerdictGauge, VerdictIcon } from "./Graphics.jsx";
+import { IconAlert, IconChevron, IconExternal, IconHelp, IconSearch, VerdictGauge, VerdictIcon } from "./Graphics.jsx";
 
 function ResultRow({ r, unverified = false, related = false }) {
   const v0 = verdictOf(r, unverified);
@@ -68,6 +68,12 @@ function summaryFor(result, view) {
         title: "No checkable claim found",
         body: "This message doesn't state something that can be fact-checked. If a claim is in there, paste just that sentence.",
       };
+    case "notice":
+      return {
+        tone: "warn",
+        title: "This looks like a lender's offer message",
+        body: "Offers like this are not rumours, so fact-checkers do not review them. We looked up the company below. No web search can show whether this particular message really came from it.",
+      };
     case "unjudged":
       return {
         tone: "warn",
@@ -96,7 +102,7 @@ function summaryFor(result, view) {
         title: "No fact-check of this exact claim yet",
         body:
           "Fact-checkers mostly review viral rumours, so everyday facts and fresh news often have none. That doesn't make the claim true or false." +
-          (view.related.length ? " Related fact-checks are below." : ""),
+          (view.related.length ? " The related fact-checks below are about other claims, so none of them rates yours." : ""),
       };
   }
 }
@@ -206,6 +212,13 @@ export default function Results({ result }) {
         </details>
       )}
 
+      {result.status === "notice" && result.extraction?.source_text && (
+        <figure className="claim">
+          <figcaption>Message we looked at</figcaption>
+          <blockquote>{clip(result.extraction.source_text, 400)}</blockquote>
+        </figure>
+      )}
+
       {claim && (
         <figure className="claim">
           <figcaption>
@@ -220,6 +233,10 @@ export default function Results({ result }) {
         <div className="summary-visual">
           {result.status === "match" ? (
             <VerdictGauge counts={counts} />
+          ) : result.status === "notice" ? (
+            <span className="summary-icon">
+              <IconAlert width={34} height={34} />
+            </span>
           ) : result.status === "no_claim" ? (
             <span className="summary-icon">
               <IconHelp width={34} height={34} />
@@ -248,8 +265,26 @@ export default function Results({ result }) {
         </div>
       </section>
 
+      {result.status === "notice" && (
+        <ul className="notice-points">
+          {(result.notice?.points || []).map((p) => (
+            <li key={p}>{p}</li>
+          ))}
+        </ul>
+      )}
+
+      {result.status === "notice" && result.extraction?.source_text && (
+        <AiCheck
+          key="company"
+          kind="company"
+          auto
+          claim={result.extraction.source_text.slice(0, 600)}
+          message={result.extraction.source_text}
+        />
+      )}
+
       {claim && (result.status === "no_match" || result.status === "unjudged") && (
-        <AiCheck key={claim} claim={claim} />
+        <AiCheck key={claim} claim={claim} message={result.extraction?.source_text} />
       )}
 
       {showFilters && (
@@ -300,7 +335,7 @@ export default function Results({ result }) {
         </details>
       )}
 
-      {result.status !== "no_claim" && <Trace result={result} view={view} />}
+      {result.status !== "no_claim" && result.status !== "notice" && <Trace result={result} view={view} />}
 
       <p className="disclaimer">These are fact-checks published by other organisations. This tool doesn't decide what is true.</p>
     </div>
