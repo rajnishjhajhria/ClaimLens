@@ -9,6 +9,7 @@ import {
   langAttr,
   LANG_NAMES,
   overallVerdict,
+  shareText,
   timeAgo,
   toneOf,
   verdictCounts,
@@ -56,6 +57,45 @@ function ResultRow({ r, unverified = false, related = false }) {
       </div>
       <IconExternal className="row-open" width={18} height={18} />
     </li>
+  );
+}
+
+function ShareBar({ text }) {
+  const [copied, setCopied] = useState(false);
+  async function copy() {
+    try {
+      await navigator.clipboard.writeText(text);
+    } catch {
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      ta.setAttribute("readonly", "");
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand("copy");
+      } catch {
+        /* nothing more to try */
+      }
+      document.body.removeChild(ta);
+    }
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  }
+  return (
+    <div className="share" role="group" aria-label="Share this result">
+      <span className="share-label">Share this result</span>
+      <button type="button" className="ghost" onClick={copy}>
+        {copied ? "Copied" : "Copy summary"}
+      </button>
+      <a className="ghost share-wa" href={`https://wa.me/?text=${encodeURIComponent(text)}`} target="_blank" rel="noreferrer noopener">
+        Send on WhatsApp
+      </a>
+      <span className="sr-only" role="status" aria-live="polite">
+        {copied ? "Summary copied" : ""}
+      </span>
+    </div>
   );
 }
 
@@ -189,6 +229,7 @@ export default function Results({ result }) {
   const counts = useMemo(() => verdictCounts(view.matches), [view.matches]);
 
   const summary = summaryFor(result, view);
+  const shared = shareText(result, view);
   const claim = result.extraction?.claim;
   const readText = result.extraction?.extracted_text;
   const claimLang = langAttr(result.extraction?.language);
@@ -282,6 +323,8 @@ export default function Results({ result }) {
           message={result.extraction.source_text}
         />
       )}
+
+      {shared && <ShareBar text={shared} />}
 
       {claim && (result.status === "no_match" || result.status === "unjudged") && (
         <AiCheck key={claim} claim={claim} message={result.extraction?.source_text} />

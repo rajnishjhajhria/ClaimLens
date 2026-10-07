@@ -153,3 +153,33 @@ export function overallVerdict(counts) {
   if (counts[top] / counts.rated < 0.7) return { key: "mixed", label: "Mixed ratings" };
   return { key: top, label: { false: "False", misleading: "Misleading", true: "True" }[top] };
 }
+
+// Plain-text summary for pasting into a chat. Only built for results that have something worth sharing.
+export function shareText(result, view) {
+  const claim = result?.extraction?.claim;
+  if (!claim) return "";
+  const lines = [];
+  if (result.status === "match" && view.matches.length) {
+    const verdict = overallVerdict(verdictCounts(view.matches));
+    lines.push(
+      verdict
+        ? verdict.key === "mixed"
+          ? "Fact-checkers disagree on this claim."
+          : `Fact-checkers say this is likely ${verdict.label.toLowerCase()}.`
+        : "Fact-checks exist for this claim or a close variant.",
+    );
+    lines.push(`Claim: ${claim}`, "");
+    view.matches.slice(0, 3).forEach((r, i) => {
+      const v = verdictOf(r);
+      const who = r.publisher || host(r.url);
+      lines.push(`${i + 1}. ${who}${v.key === "article" ? "" : ` (${v.label})`}: ${r.url}`);
+    });
+  } else if (result.status === "no_match") {
+    lines.push("No published fact-check found for this claim.", `Claim: ${claim}`, "");
+    lines.push("That does not make it true or false. Check an official or news source.");
+  } else {
+    return "";
+  }
+  lines.push("", "Checked with ClaimLens. It only points to fact-checks published by others.");
+  return lines.join("\n");
+}

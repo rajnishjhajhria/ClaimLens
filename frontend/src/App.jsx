@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import "./App.css";
 import Results from "./Results.jsx";
+import { clearHistory, loadHistory, saveToHistory } from "./history.js";
+import { clip, overallVerdict, timeAgo, verdictCounts } from "./factcheckUtils.js";
 import { HeroArt, IconAlert, IconCheck, IconImage, IconSearch, IconText, IconUpload, Logo } from "./Graphics.jsx";
 
 const API = import.meta.env.VITE_API_URL || "http://localhost:8000";
@@ -68,6 +70,7 @@ export default function App() {
   const [resultKey, setResultKey] = useState(0);
   const [error, setError] = useState("");
   const [dragging, setDragging] = useState(false);
+  const [history, setHistory] = useState(() => loadHistory());
 
   const abortRef = useRef(null);
   const outcomeRef = useRef(null);
@@ -129,6 +132,21 @@ export default function App() {
     setTimeout(() => textRef.current?.focus(), 0);
   }
 
+  function openFromHistory(item) {
+    abortRef.current?.abort("cancel");
+    setLoading(false);
+    setError("");
+    setFile(null);
+    setMode("text");
+    setText("");
+    setResult(item.result);
+    setResultKey((k) => k + 1);
+  }
+
+  function wipeHistory() {
+    setHistory(clearHistory());
+  }
+
   function cancel() {
     abortRef.current?.abort("cancel");
     setLoading(false);
@@ -162,6 +180,7 @@ export default function App() {
       if (res.ok) {
         setResult(data);
         setResultKey((k) => k + 1);
+        setHistory(saveToHistory(data, mode));
       } else {
         setError(messageFor(res.status, data));
       }
@@ -370,6 +389,35 @@ export default function App() {
               </button>
             ))}
           </div>
+        )}
+
+        {showExamples && history.length > 0 && (
+          <section className="history" aria-labelledby="history-title">
+            <div className="history-head">
+              <h2 id="history-title">Recent checks</h2>
+              <span className="history-note">Saved only in this browser</span>
+              <button type="button" className="ghost" onClick={wipeHistory}>
+                Clear history
+              </button>
+            </div>
+            <ul className="history-list">
+              {history.map((item) => {
+                const r = item.result;
+                const matches = r.matches || [];
+                const v = r.status === "match" ? overallVerdict(verdictCounts(matches)) : null;
+                const badge = r.status === "match" ? (v ? v.label : "Fact-checks found") : "Nothing found";
+                return (
+                  <li key={item.id}>
+                    <button type="button" className="history-item" onClick={() => openFromHistory(item)}>
+                      <span className={`history-badge hb-${v ? v.key : r.status === "match" ? "found" : "none"}`}>{badge}</span>
+                      <span className="history-claim">{clip(item.claim, 110)}</span>
+                      <time dateTime={item.t}>{timeAgo(item.t)}</time>
+                    </button>
+                  </li>
+                );
+              })}
+            </ul>
+          </section>
         )}
 
         {loading && (
